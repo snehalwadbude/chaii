@@ -1,10 +1,14 @@
 import dotenv from "dotenv";
-
+// import {app} from "./app.js";
+import { app } from "./app.js";
 import connectDB from "./DB/index.js";
 
 
 // filepath: c:\Users\HP\Desktop\new chai\src\index.js
 dotenv.config({ path: '../.env' });
+
+
+
 connectDB()
     .then(() => {
         app.listen(process.env.PORT || 8000, () => {
@@ -13,6 +17,7 @@ connectDB()
 })
     .catch((err) => {
         console.log("MONGOdb connection failed !!!:", err);
+
         
     });
 
